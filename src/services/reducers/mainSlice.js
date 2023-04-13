@@ -4,7 +4,7 @@ export const mainSlice = createSlice({
   name: 'main',
   initialState: {
     theme: "",
-    gameStart: true,
+    gameStart: false,
   },
   reducers: {
     setTheme: (state, action) => {
