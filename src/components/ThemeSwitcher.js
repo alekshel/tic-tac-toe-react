@@ -19,12 +19,12 @@ class ThemeSwitcher extends React.Component {
     const theme = this.props.theme;
     return (
       <div>
-        <span className={theme != "light" ? "opacity" : ""}>Світла</span>
+        <span className={theme != "light" ? "opacity" : ""}>Light</span>
         <Switcher
           checked={theme == "light" ? false : true}
           onChange={this.changeTheme.bind(this)}
         />
-        <span className={theme != "dark" ? "opacity" : ""}>Темна</span>
+        <span className={theme != "dark" ? "opacity" : ""}>Dark</span>
       </div>
     );
   }

@@ -16,8 +16,8 @@ class Header extends React.Component {
 
   gameEndText(player) {
     return this.props.tie
-      ? "Нічия! Спробуйте ще раз"
-      : "Перемога за гравцем:" + " " + player;
+      ? "A tie! Try again"
+      : "Victory by player:" + " " + player;
   }
 
   gameRestart() {
@@ -42,16 +42,16 @@ class Header extends React.Component {
             onClick={() => this.props.gameMode()}
           >
             <Back />
-            <span>Меню</span>
+            <span>Menu</span>
           </button>
-          <h1>Хрестики нолики</h1>
+          <h1>Tic-Tac-Toe</h1>
         </div>
 
         <section className="game-info">
           <div>
             {!this.props.gameOver ? (
               <>
-                <p>Хід гравця</p>
+                <p>Player's turn</p>
                 { tempPlayers[0] == players[0].name && <XPlayerIcon /> }
                 { tempPlayers[0] == players[1].name && <OPlayerIcon /> }
               </>
@@ -60,7 +60,7 @@ class Header extends React.Component {
                 <p>{this.gameEndText(this.props.tempPlayers[0])}</p>
                 <button
                   onClick={this.gameRestart.bind(this)}
-                >Перезавантажити</button>
+                >Restart</button>
               </>
             )}
           </div>

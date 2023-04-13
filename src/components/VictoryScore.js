@@ -11,7 +11,7 @@ class VictoryScore extends React.Component {
     const players = this.props.players;
     return (
       <section className="victory-score">
-        <p>Рахунок</p>
+        <p>Score</p>
 
         <div>
           <div>

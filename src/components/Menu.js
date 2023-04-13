@@ -13,7 +13,7 @@ class Menu extends React.Component {
   render() {
     return (
       <menu>
-        <button onClick={() => this.props.gameMode()}>Почати гру</button>
+        <button onClick={() => this.props.gameMode()}>Start game</button>
         <ThemeSwitcher />
       </menu>
     );
