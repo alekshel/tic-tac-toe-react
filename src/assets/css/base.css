@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --const-blue: #01bdf6;
+  --const-red: #f72a39;
+
+  --const-white: #ffffff;
+  --const-hover-white: #eeeeee;
+  --const-grey: #f8f8f8;
+
+  --const-black: #000000;
+  --const-prime-black: #15141A;
+  --const-hover-black: #313131;
+}
+
+/* semantic color variables for this project */
+:root.light {
+  --text-color: var(--const-black);
+  --text-color-reverse: var(--const-white);
+
+  --color-background: var(--const-white);
+  --color-background-reverse: var(--const-prime-black);
+
+  --line-color: var(--const-black);
+  --switcher-bg: var(--const-prime-black);
+
+  --field-hover-color: var(--const-hover-white);
+}
+
+/* @media (prefers-color-scheme: dark) { */
+  :root.dark {
+    --text-color: var(--const-white);
+    --text-color-reverse: var(--const-prime-black);
+
+    --color-background: var(--const-prime-black);
+    --color-background-reverse: var(--const-white);
+
+    --line-color: var(--const-white);
+    --switcher-bg: var(--const-white);
+
+    --field-hover-color: var(--const-hover-black);
+  }
+/* } */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  height: 100%;
+  color: var(--text-color);
+  font-weight: 400;
+  background: var(--color-background);
+}
