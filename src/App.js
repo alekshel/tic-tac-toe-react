@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { setTheme } from "./services/reducers/mainSlice"
 import Menu from "./components/Menu"
 
 class App extends React.Component {
@@ -11,33 +13,35 @@ class App extends React.Component {
     };
   }
 
-  setTheme(theme) {
-    this.setState({theme}, () => {
-      document.documentElement.className = this.state.theme
-    });
-  }
-
   componentDidMount() {
     if (localStorage.getItem("theme")) {
-      this.setTheme(localStorage.getItem("theme"))
+      this.props.setTheme(localStorage.getItem("theme"))
       return
     }
 
     if (window?.matchMedia("(prefers-color-scheme: dark)").matches) {
-      this.setTheme("dark")
+      this.props.setTheme("dark")
     }
   }
 
   render() {
     return (
       <main>
-        <Menu
-          theme={this.state.theme}
-          setTheme={this.setTheme.bind(this)}
-        />
+        { !this.props.gameStart && <Menu/> }
       </main>
     )
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    theme: state.main.theme,
+    gameStart: state.main.gameStart,
+  };
+};
+
+const mapDispatchToProps = {
+  setTheme
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

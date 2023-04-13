@@ -1,6 +1,8 @@
 import "../assets/css/Menu.css";
 
 import React from "react";
+import { connect } from "react-redux";
+import { setTheme, gameMode } from "../services/reducers/mainSlice"
 import Switcher from "./Switcher";
 
 class Menu extends React.Component {
@@ -19,7 +21,9 @@ class Menu extends React.Component {
     const theme = this.props.theme
     return (
       <menu>
-        <button>Почати гру</button>
+        <button
+          onClick={() => this.props.gameMode()}
+        >Почати гру</button>
 
         <div>
           <span className={theme != "light" ? "opacity" : ""}>
@@ -38,4 +42,15 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu;
+const mapStateToProps = (state) => {
+  return {
+    theme: state.main.theme,
+  };
+};
+
+const mapDispatchToProps = {
+  setTheme,
+  gameMode,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
