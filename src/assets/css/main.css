@@ -14,6 +14,12 @@ main {
   width: 500px;
 }
 
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 main header {
   text-align: center;
 }

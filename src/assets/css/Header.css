@@ -1,0 +1,28 @@
+.header-line {
+    display: flex;
+    align-items: center;
+}
+
+.back-to-menu {
+    display: flex;
+    align-items: center;
+    padding: 3px 6px;
+    margin-right: 20px;
+    
+    border: 0;
+    border-radius: 4px;
+
+    color: var(--text-color-reverse) !important;
+    background: var(--color-background-reverse);
+
+    transition: all .3s ease-out;
+    cursor: pointer;
+}
+
+.back-to-menu:hover {
+    opacity: .8;
+}
+
+.back-to-menu svg {
+    width: 15px;
+}
